@@ -21,24 +21,24 @@ In this application, the main page displays a list of YouTube videos, where you 
     │   └── youtubeMinLogo.svg
     ├── components
     │   ├── filter
-    |   |   ├── FilterDesktop.js # This Component implements the Filter section for the Desktop layout
-    |   |   └── FilterMobile.js # This Component implements the Filter section for the Mobile layout
+    │   │   ├── FilterDesktop.js # This Component implements the Filter section for the Desktop layout
+    │   │   └── FilterMobile.js # This Component implements the Filter section for the Mobile layout
     │   ├── ui
-    |   |   ├── Button.js # Custom Button Component
-    |   |   └── Card.js # Custom Card Component for better layout
+    │   │   ├── Button.js # Custom Button Component
+    │   │   └── Card.js # Custom Card Component for better layout
     │   ├── videos
-    |   |   ├── VideosList.js # Component renders List of fetched Videos
-    |   |   └── VideosListItem.js # Component renders each video in the fetched Videos List
+    │   │   ├── VideosList.js # Component renders List of fetched Videos
+    │   │   └── VideosListItem.js # Component renders each video in the fetched Videos List
     │   ├── Header.js # This Component implements the Header section.
     │   └── Search.js # This Component implements the Search bar and the search Button section.
     ├── hooks
     │   └── use-windowDimensions.js # Custom-made hook to fetch the width/height on window resize
     ├── store
     │   ├── slice
-    |   |   └── videosSlice.js # a store slice for the videos 
+    │   │   └── videosSlice.js # a store slice for the videos 
     │   ├── thunks
-    |   |   └── fetchVideos.js # async thunk that fetches the videos from the API
-    |   └── index.js # index for configuring the redux store
+    │   │   └── fetchVideos.js # async thunk that fetches the videos from the API
+    │   └── index.js # index for configuring the redux store
     ├── App.js # This is the root of the app and contains all the main functions.
     ├── index.scss # Global styles.
     └── index.js # You should not need to modify this file. It is used for DOM rendering only.
@@ -74,5 +74,3 @@ fetchVideos(searchTerm)
 
 * searchTerm: `<String>`
 * Returns a Promise which resolves to a JSON object containing a collection video objects containing the searchTerm in them.
-
-## Important
