@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+Reach Task Project
+---------------------------------------------------------
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
+Task from Reach Team.
 
-## Available Scripts
+## Overview
+In this application, the main page displays a list of YouTube videos, where you can search for the desired video in the search bar.
 
-In the project directory, you can run:
+## What You're Getting
+```bash
+├── README.md - This file.
+├── package.json # npm package manager file. It's unlikely that you'll need to modify this.
+├── public
+│   ├── favicon.ico # React Icon, You may change if you wish.
+│   ├── index.html # DO NOT MODIFY
+│   └── manifest.json # DO NOT MODIFY
+└── src
+    ├── assets # Helpful logos for the app.
+    │   ├── youtubeLogo.svg
+    │   └── youtubeMinLogo.svg
+    ├── components
+    │   ├── filter
+    |   |   ├── FilterDesktop.js # This Component implements the Filter section for the Desktop layout
+    |   |   └── FilterMobile.js # This Component implements the Filter section for the Mobile layout
+    │   ├── ui
+    |   |   ├── Button.js # Custom Button Component
+    |   |   └── Card.js # Custom Card Component for better layout
+    │   ├── videos
+    |   |   ├── VideosList.js # Component renders List of fetched Videos
+    |   |   └── VideosListItem.js # Component renders each video in the fetched Videos List
+    │   ├── Header.js # This Component implements the Header section.
+    │   └── Search.js # This Component implements the Search bar and the search Button section.
+    ├── hooks
+    │   └── use-windowDimensions.js # Custom-made hook to fetch the width/height on window resize
+    ├── store
+    │   ├── slice
+    |   |   └── videosSlice.js # a store slice for the videos 
+    │   ├── thunks
+    |   |   └── fetchVideos.js # async thunk that fetches the videos from the API
+    |   └── index.js # index for configuring the redux store
+    ├── App.js # This is the root of the app and contains all the main functions.
+    ├── index.scss # Global styles.
+    └── index.js # You should not need to modify this file. It is used for DOM rendering only.
+```
 
-### `npm start`
+## Build Tools
+* React
+* Redux
+* SCSS
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installing All Required Packages
+- `npm install`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## To Run Project
+- cd into the root folder and run
+- `npm start`
 
-### `npm test`
+Open browser at http://localhost:3000/
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Backend Server
 
-### `npm run build`
+To simplify the development process, we're working with a YouTube Data API as a backend server to develop against. The provided file [`fetchVideos.js`](src/store/thunks/fetchVideos.js) contains the method needed to perform the necessary operation on the backend:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* [`search`](#search)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `search`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Method Signature:
 
-### `npm run eject`
+```js
+fetchVideos(searchTerm)
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* searchTerm: `<String>`
+* Returns a Promise which resolves to a JSON object containing a collection video objects containing the searchTerm in them.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Important
