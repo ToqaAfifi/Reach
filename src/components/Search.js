@@ -28,7 +28,7 @@ const Search = ({ layout }) => {
     }
 
     return <form className="search">
-        <input type="text" placeholder="Search YouTube" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+        <input type="search" placeholder="Search YouTube" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
         <Button type="submit" loading={isLoading} onClick={searchHandler}>
             <GoSearch />
         </Button>

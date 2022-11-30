@@ -8,5 +8,3 @@ export const store = configureStore({
         loadingBar: loadingBarReducer,
     }
 })
-
-export const videosActions = videosSlice.actions;

@@ -4,16 +4,9 @@ import { fetchVideos } from "../thunks/fetchVideos";
 export const videosSlice = createSlice({
     name: 'video',
     initialState: {
-        data: { totalResults: 0, videosList: [] },
+        data: { totalResults: 0, videosList: [], channel: {} },
         isLoading: false,
         error: null
-    },
-    reducers: {
-        reset(state, action) {
-            state.data = {};
-            state.isLoading = false;
-            state.error = null;
-        }
     },
     extraReducers: (builder) => {
         builder.addCase(fetchVideos.pending, (state, action) => {
