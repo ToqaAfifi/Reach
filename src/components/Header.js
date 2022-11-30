@@ -13,10 +13,12 @@ const Header = ({ dimensions, layout }) => {
         headerStyle = "headerMobile";
     }
 
-    return <div className={headerStyle}>
+    return <div className={layout === "desktop" && "headerContainer"}>
         {layout === "desktop" && <LoadingBar className='loadingBar' />}
-        <img src={logo} alt="logo" className='logo' />
-        <Search layout={layout}/>
+        <div className={headerStyle}>
+            <img src={logo} alt="logo" className='logo' />
+            <Search layout={layout} />
+        </div>
     </div>
 }
 

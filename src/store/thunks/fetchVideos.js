@@ -4,6 +4,9 @@ import axios from "axios";
 export const fetchVideos = createAsyncThunk('videos/fetch', async (searchTerm) => {
     const response = await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&query=${searchTerm}&key=${process.env.REACT_APP_API_KEY}`);
 
+    console.log(response.data);
+
+
     let data = {};
     data.totalResults = response.data.pageInfo.totalResults;
     data.videosList = [];
@@ -17,12 +20,14 @@ export const fetchVideos = createAsyncThunk('videos/fetch', async (searchTerm) =
             liveBroadcastContent: video.snippet.liveBroadcastContent,
             publishTime: video.snippet.publishTime,
             publishedAt: video.snippet.publishedAt,
-            thumbnail: video.snippet.thumbnails.default,
+            thumbnail: video.snippet.thumbnails.medium,
             title: video.snippet.title,
         };
 
         data.videosList.push(videoData);
     });
+
+    console.log(data);
 
     return data;
 })

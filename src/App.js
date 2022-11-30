@@ -22,9 +22,9 @@ function App() {
   return (
     <div className="root">
 
-      <Header dimensions={dimensions} layout={layout}/>
+      <Header dimensions={dimensions} layout={layout} />
 
-      <div className="container">
+      <div className={layout === "desktop" ? "containerDesktop" : "containerMobile"}>
         {filterContent}
         <hr />
         {(isLoading && layout === "mobile") && <LoadingSpinner />}

@@ -14,7 +14,7 @@ const VideosList = () => {
     }
 
     return <Fragment>
-        {data.videosList.map(video => <VideosListItem key={video.id} {...video} />)}
+        {data.videosList.map(video => <VideosListItem key={video.id} video={video} />)}
     </Fragment>
 }
 
