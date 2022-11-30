@@ -7,7 +7,7 @@ const Header = ({ dimensions }) => {
     let headerStyle = "headerDesktop";
     let logo = mainLogo;
 
-    if (dimensions?.width <= 512) {
+    if (dimensions?.width <= 600) {
         logo = minLogo;
         headerStyle = "headerMobile";
     }
