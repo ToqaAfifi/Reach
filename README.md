@@ -28,6 +28,7 @@ In this application, the main page displays a list of YouTube videos, where you 
     │   │   ├── Card.js # Custom Card Component for better layout
     │   │   └── LoadingSpinner.js # Loading Spinner Component for mobile layout
     │   ├── videos
+    │   │   ├── VideoDetails.js # Component displays the details of each video
     │   │   ├── VideosList.js # Component renders List of fetched Videos
     │   │   └── VideosListItem.js # Component renders each video in the fetched Videos List
     │   ├── Header.js # This Component implements the Header section.
@@ -40,6 +41,9 @@ In this application, the main page displays a list of YouTube videos, where you 
     │   ├── thunks
     │   │   └── fetchVideos.js # async thunk that fetches the videos from the API
     │   └── index.js # index for configuring the redux store
+    ├── util
+    │   ├── formatPublishTime.js # Converts the publish time to "Time Ago"
+    │   └── formateViewCount.js # formats the view count to K or M
     ├── App.js # This is the root of the app and contains all the main functions.
     ├── index.scss # Global styles.
     └── index.js # You should not need to modify this file. It is used for DOM rendering only.

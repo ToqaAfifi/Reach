@@ -4,9 +4,11 @@ import VideoDetails from "./VideoDetails";
 const VideosListItem = ({ video }) => {
 
     return <Card>
-        <img src={video.thumbnail.url} alt="thumbnail" width={video.thumbnail.width} height={video.thumbnail.height} />
-        <VideoDetails {...video}/>
-        
+        <div className="image">
+            <img src={video.thumbnail.url} alt="thumbnail" width={video.thumbnail.width} height={video.thumbnail.height} />
+        </div>
+        <VideoDetails {...video} />
+
     </Card>
 }
 

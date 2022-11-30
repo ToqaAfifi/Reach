@@ -13,7 +13,7 @@ const Header = ({ dimensions, layout }) => {
         headerStyle = "headerMobile";
     }
 
-    return <div className={layout === "desktop" && "headerContainer"}>
+    return <div className={layout === "desktop" ? "headerContainer" : ''}>
         {layout === "desktop" && <LoadingBar className='loadingBar' />}
         <div className={headerStyle}>
             <img src={logo} alt="logo" className='logo' />
