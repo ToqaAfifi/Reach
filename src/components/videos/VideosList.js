@@ -1,36 +1,21 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchVideos } from "../../store/thunks/fetchVideos";
-import { TailSpin } from "react-loader-spinner";
+import { Fragment } from "react";
+import { useSelector } from "react-redux";
+import VideosListItem from "./VideosListItem";
 
-const VideosList = ({dimensions}) => {
+const VideosList = () => {
 
-    const dispatch = useDispatch();
-    const { data: videosList, isLoading, error } = useSelector(state => state.videos);
-
-    // useEffect(() => {
-    //     dispatch(fetchVideos('makeup'));
-    // }, [dispatch])
-
-    if (isLoading && dimensions?.width <= 600) {
-        return <TailSpin
-            height="80"
-            width="80"
-            color="gray"
-            ariaLabel="tail-spin-loading"
-            radius="1"
-            wrapperClass="spinner"
-            visible={true}
-        />
-    }
+    const { data, error } = useSelector(state => state.videos);
 
     if (error) {
-        return <p>{error.message}</p>
+        return <div className="error">
+            <h3>{error.name}</h3>
+            <p>{error.code}: {error.message}</p>
+        </div>
     }
 
-    return <div>
-
-    </div>
+    return <Fragment>
+        {data.videosList.map(video => <VideosListItem key={video.id} {...video} />)}
+    </Fragment>
 }
 
 export default VideosList;

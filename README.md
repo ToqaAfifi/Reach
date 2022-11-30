@@ -25,7 +25,8 @@ In this application, the main page displays a list of YouTube videos, where you 
     │   │   └── FilterMobile.js # This Component implements the Filter section for the Mobile layout
     │   ├── ui
     │   │   ├── Button.js # Custom Button Component
-    │   │   └── Card.js # Custom Card Component for better layout
+    │   │   ├── Card.js # Custom Card Component for better layout
+    │   │   └── LoadingSpinner.js # Loading Spinner Component for mobile layout
     │   ├── videos
     │   │   ├── VideosList.js # Component renders List of fetched Videos
     │   │   └── VideosListItem.js # Component renders each video in the fetched Videos List

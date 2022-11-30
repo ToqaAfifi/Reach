@@ -1,8 +1,10 @@
-const VideosListItem = () => {
+import Card from "../ui/Card";
 
-    return <div>
+const VideosListItem = ({ title }) => {
 
-    </div>
+    return <Card>
+        {title}
+    </Card>
 }
 
 export default VideosListItem;

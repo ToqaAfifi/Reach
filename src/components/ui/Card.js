@@ -1,6 +1,6 @@
 const Card = ({children}) => {
 
-    return <div>
+    return <div className="card">
         {children}
     </div>
 }

@@ -4,13 +4,13 @@ import { fetchVideos } from "../thunks/fetchVideos";
 export const videosSlice = createSlice({
     name: 'video',
     initialState: {
-        data: [],
+        data: { totalResults: 0, videosList: [] },
         isLoading: false,
         error: null
     },
     reducers: {
-        reset(state, action){
-            state.data = [];
+        reset(state, action) {
+            state.data = {};
             state.isLoading = false;
             state.error = null;
         }
