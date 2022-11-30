@@ -2,7 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const fetchVideos = createAsyncThunk('videos/fetch', async (searchTerm) => {
-    const response = await axios.get(`htps://www.googleapis.com/youtube/v3/search?part=snippet&query=${searchTerm}&key=${process.env.REACT_APP_API_KEY}`);
+    const response = await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&query=${searchTerm}&key=${process.env.REACT_APP_API_KEY}`);
 
     let data = {};
     data.totalResults = response.data.pageInfo.totalResults;
