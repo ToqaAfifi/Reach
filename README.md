@@ -79,3 +79,19 @@ fetchVideos(searchTerm)
 
 * searchTerm: `<String>`
 * Returns a Promise which resolves to a JSON object containing a collection video objects containing the searchTerm in them.
+
+## Important
+
+```js
+fetchViewCount(videosIds)
+```
+
+* videosIds: `<String>`
+* Returns a Promise which resolves to a JSON object containing a collection video objects containing the view count for each video
+
+```js
+fetchChannelStats(channelsIds)
+```
+
+* channelsIds: `<String>`
+* Returns a Promise which resolves to a JSON object containing a collection channel objects containing the statistics (like: Subscriber Count and Video Count) for each channel
