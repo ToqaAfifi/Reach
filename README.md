@@ -95,3 +95,7 @@ fetchChannelStats(channelsIds)
 
 * channelsIds: `<String>`
 * Returns a Promise which resolves to a JSON object containing a collection channel objects containing the statistics (like: Subscriber Count and Video Count) for each channel
+
+## NOTE
+
+* To use the API provided by YouTube, you need to use a valid API Key. So in [`fetchVideos.js`] file, set the `API_KEY` constant to your YouTube API Key instead of `process.env.REACT_APP_API_KEY`

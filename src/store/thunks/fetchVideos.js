@@ -1,8 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+const API_KEY = process.env.REACT_APP_API_KEY;
+
 export const fetchVideos = createAsyncThunk('videos/fetch', async (searchTerm) => {
-    const response = await axios.get(`https://www.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_API_KEY}`, {
+    const response = await axios.get(`https://www.googleapis.com/youtube/v3/search?key=${API_KEY}`, {
         params: {
             part: "snippet",
             channelType: "any",
@@ -83,7 +85,7 @@ export const fetchVideos = createAsyncThunk('videos/fetch', async (searchTerm) =
 
 const fetchViewCount = async (ids) => {
 
-    const response = await axios.get(`https://youtube.googleapis.com/youtube/v3/videos?key=${process.env.REACT_APP_API_KEY}`, {
+    const response = await axios.get(`https://youtube.googleapis.com/youtube/v3/videos?key=${API_KEY}`, {
         params: {
             part: "statistics",
             id: ids,
@@ -107,7 +109,7 @@ const fetchViewCount = async (ids) => {
 
 const fetchChannelStats = async (channelIds) => {
 
-    const response = await axios.get(`https://youtube.googleapis.com/youtube/v3/channels?key=${process.env.REACT_APP_API_KEY}`, {
+    const response = await axios.get(`https://youtube.googleapis.com/youtube/v3/channels?key=${API_KEY}`, {
         params: {
             part: "statistics",
             id: channelIds,
