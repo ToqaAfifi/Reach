@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import useWindowDimensions from "./hooks/use-windowDimensions";
+import useLayout from "./hooks/use-layout";
 import Header from "./components/Header";
 import VideosList from "./components/videos/VideosList";
 import FilterDesktop from "./components/filter/FilterDesktop";
@@ -9,20 +9,18 @@ import LoadingSpinner from "./components/ui/LoadingSpinner";
 function App() {
 
   const { isLoading } = useSelector(state => state.videos);
-  const { dimensions } = useWindowDimensions();
+  const { layout } = useLayout();
 
   let filterContent = <FilterDesktop />
-  let layout = "desktop";
 
-  if (dimensions?.width <= 600) {
+  if (layout === "mobile") {
     filterContent = <FilterMobile />
-    layout = "mobile";
   }
 
   return (
     <div className="root">
 
-      <Header dimensions={dimensions} layout={layout} />
+      <Header layout={layout} />
 
       <div className={layout === "desktop" ? "containerDesktop" : "containerMobile"}>
         {filterContent}

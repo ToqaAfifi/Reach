@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import useWindowDimensions from "../../hooks/use-windowDimensions";
+import useWindowDimensions from "../../hooks/use-layout";
 import formatPublishTime from "../../util/formatPublishTime";
 import formateViewCount from "../../util/formatViewCount";
 

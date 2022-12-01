@@ -34,7 +34,7 @@ In this application, the main page displays a list of YouTube videos, where you 
     │   ├── Header.js # This Component implements the Header section.
     │   └── Search.js # This Component implements the Search bar and the search Button section.
     ├── hooks
-    │   └── use-windowDimensions.js # Custom-made hook to fetch the width/height on window resize
+    │   └── use-layout.js # Custom-made hook to fetch the layout of the device (desktop/mobile)
     ├── store
     │   ├── slice
     │   │   └── videosSlice.js # a store slice for the videos 
